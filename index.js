@@ -29,31 +29,31 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
 app.get('/entries', function(req, res) {
   res.json(leaderboard);
 });
-//
-// app.get('/entries/:id', function(req, res) {
-//   res.render('index',leaderboard, id);
-// });
-//
-//
-// app.post('/entries', function(req, res) {
-//   leaderboard.push(req.body.entry);
-//   res.send(true);
-// });
-//
-//
-// app.put('/entries/:id', function(req, res) {
-//   leaderboard.splice(req.params.id,1,req.body.entry);
-//   res.send(true);
-// });
-//
-//
-// app.delete('/entries/:id', function(req, res) {
-//   leaderboard.splice(req.params.id,1);
-//   res.send(true);
-// });
-//
-// app.get('/todos', function(req, res) {
-//   res.send(todoList);
-// });
+
+app.get('/entries/:id', function(req, res) {
+
+});
+
+
+app.post('/entries', function(req, res) {
+  leaderboard.push(req.body);
+  res.send(leaderboard);
+});
+
+
+app.put('/entries/:id', function(req, res) {
+  leaderboard.splice(req.params.id,1,req.body.entry);
+  res.send(true);
+});
+
+
+app.delete('/entries/:id', function(req, res) {
+  leaderboard.splice(req.params.id,1);
+  res.send(true);
+});
+
+app.get('/todos', function(req, res) {
+  res.send(todoList);
+});
 
 app.listen(3000);
