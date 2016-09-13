@@ -1,0 +1,25 @@
+{
+  "name": "api-leaderboard",
+  "version": "1.0.0",
+  "description": "Lab - Leaderboard API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leeyihui/api-leaderboard.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/leeyihui/api-leaderboard/issues"
+  },
+  "homepage": "https://github.com/leeyihui/api-leaderboard#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "ejs": "^2.5.2",
+    "express": "^4.14.0",
+    "path": "^0.12.7"
+  }
+}
