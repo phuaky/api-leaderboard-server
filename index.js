@@ -1,7 +1,7 @@
 //GLOBAL VARIABLE - Leaderboard
 var leaderboard = [
-  {name:"Luke",score:1234},
-  {name:"Yi Hui",score:989}
+  {name:"Luke",initials:"SKY",score:1234},
+  {name:"Yi Hui",initials:"LYH",score:989}
 ];
 
 //Required library initialization
@@ -34,26 +34,29 @@ app.get('/entries/:id', function(req, res) {
 
 });
 
-
 app.post('/entries', function(req, res) {
-  leaderboard.push(req.body);
-  res.send(leaderboard);
+  var entry = {
+    name: req.body.name,
+    initials: req.body.initials,
+    score: req.body.score
+  };
+  leaderboard.push(entry);
+  res.json(leaderboard);
 });
-
 
 app.put('/entries/:id', function(req, res) {
-  leaderboard.splice(req.params.id,1,req.body.entry);
-  res.send(true);
+  var entry = {
+    name: req.body.name,
+    initials: req.body.initials,
+    score: req.body.score
+  };
+  leaderboard.splice(req.params.id,1,entry);
+  res.json(leaderboard);
 });
-
 
 app.delete('/entries/:id', function(req, res) {
   leaderboard.splice(req.params.id,1);
-  res.send(true);
-});
-
-app.get('/todos', function(req, res) {
-  res.send(todoList);
+  res.json(leaderboard);
 });
 
 app.listen(3000);
